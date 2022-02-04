@@ -1,4 +1,5 @@
 #include "헤더.h"
+#include "parson.h"
 
 #define player_number 20
 
@@ -7,6 +8,33 @@ void player_prof();
 void player_prof_C();
 void player_prof_R();
 void player_prof_U();
+
+/********** 파일 입력 함수 **********/
+void write_file() {
+	FILE* f = fopen("player_prof.txt", "w");
+	for (int i = 0; i < player_number; i++) {
+		if (player_list[i].player_id == 0) {
+			break;
+		}
+		fprintf(f, "%s %s %d %d %d %s %c\n",
+			player_list[i].player_id, player_list[i].player_name, player_list[i].player_height, player_list[i].player_weight, player_list[i].player_back_num, player_list[i].player_position, player_list[i].useYN);
+	}
+	fclose(f);
+}
+
+/********** 파일 출력 함수 **********/
+void read_file() {
+	FILE* f;
+	f = fopen("player_prof.txt", "r");
+
+	int i = 0;
+	while (!feof(f)) {
+		fscanf(f, "%s %s %d %d %d %s %c\n",
+			player_list[i].player_id, player_list[i].player_name, &player_list[i].player_height, &player_list[i].player_weight, &player_list[i].player_back_num, player_list[i].player_position, &player_list[i].useYN);
+		i++;
+	}
+	fclose(f);
+}
 
 /********** 등록 관련 함수 **********/
 void player_prof_C() {
@@ -21,7 +49,13 @@ void player_prof_C() {
 
 	printf("\n\n---------------------------------------------------------------\n선수 등록을 선택하셨습니다.\n");
 	for (int i = 0; i < player_number; i++) {
-		if (strlen(player_list[i].player_name) == 0) {
+		//파일이 시스템상에서 새로 쓰기되면 파일 끝에 인덱스번호 제한 끝까지 0으로 이루어진 가짜 선수가 생성되므로 체크
+		if (strcmp(player_list[i].player_name, "0") == 0) {
+			seq = i;
+			hasRoom = 1;
+			break;
+		}
+		else if (strlen(player_list[i].player_name) == 0) {
 			seq = i;
 			hasRoom = 1;
 			break;
@@ -30,6 +64,9 @@ void player_prof_C() {
 
 	if (hasRoom != 1) {
 		printf("등록 가능한 선수 수를 넘어섰습니다. 선수 프로필 메뉴로 돌아갑니다.\n\n");
+
+		system("pause");
+
 		player_prof();
 	}
 
@@ -91,6 +128,8 @@ void player_prof_C() {
 	player_history_list[seq].view_YN = 'Y';
 
 	printf("%s", player_list[12].player_name);
+	//파일에 변경사항 저장
+	write_file();
 	printf("선수가 등록되었습니다. 선수 프로필 메뉴로 돌아갑니다.\n\n");
 	player_prof();
 }
@@ -99,6 +138,9 @@ void player_prof_C() {
 void proc_update(int seq) {
 	int cmd = 0;
 	char tmp_id_c[5];
+
+	//파일 출력 함수
+	write_file();
 
 	system("cls");
 
@@ -244,6 +286,35 @@ void player_prof_R() {
 	int seq = 99;
 
 	system("cls");
+	
+	//JSON으로 읽어보기
+	////초기화
+	//JSON_Value* jval = json_parse_file("player_list.json");
+	//JSON_Object* jobj = json_value_get_object(jval);
+	////JSON_Array* jarr = json_object_get_array(jobj, "player");
+	////JSON_Array* jarr = json_value_get_array(jval);
+
+	//JSON_Array* jarr = json_object_get_array(jobj, "player");
+
+	////사용
+	//for (int i = 0; i < json_array_get_count(jarr); i++) {
+	//	printf("i : %d\n", i);
+	//	JSON_Object* in = json_array_get_object(jarr, i);
+	//	strcpy(player_list[i].player_id, json_object_get_string(in, "id"));
+	//	printf("%s\n", json_object_get_string(in, "name"));
+	//	strcpy(player_list[i].player_name, json_object_get_string(in, "name"));
+	//	player_list[i].player_height = (int)json_object_get_number(in, "height");
+	//	player_list[i].player_weight= (int)json_object_get_number(in, "weight");
+	//	player_list[i].player_back_num = (int)json_object_get_number(in, "back");
+	//	strcpy(player_list[i].player_position, json_object_get_string(in, "position"));
+	//	player_list[i].useYN = json_object_get_string(in, "useYN")[0];
+	//}
+
+	//for (int i = 0; i < player_number; i++) {
+	//	printf("%s\t%s\t%dcm\t%dkg\t%d\t%s\t%c\n\n", player_list[i].player_id, player_list[i].player_name, player_list[i].player_height, player_list[i].player_weight,
+	//		player_list[i].player_back_num, player_list[i].player_position, player_list[i].useYN);
+	//}
+	//json_value_free(jval);
 
 	printf("\n\n---------------------------------------------------------------\n선수 조회를 선택하셨습니다.\n");
 	printf("조회를 원하는 선수의 이름 : \n");
@@ -259,7 +330,6 @@ void player_prof_R() {
 	if (strlen(player_list[seq].player_name) != 0 && player_list[seq].useYN == 'Y') {
 		char team_name[50];
 		int team_id = player_list[seq].player_id[0] - '0';
-		printf("%d", team_id);
 
 		//팀 ID로 팀명 받아오기 
 		for (int i = 0; i < 10; i++) {
@@ -281,6 +351,7 @@ void player_prof_R() {
 	}
 	else {
 		printf("저장되지 않은 선수 이름입니다. 선수 프로필 메뉴로 돌아갑니다.\n\n");
+		system("pause");
 		player_prof();
 	}
 }
@@ -313,6 +384,9 @@ void player_prof_D() {
 			player_list[seq].useYN = 'N';
 
 			printf("삭제 처리되었습니다. 선수 프로필 메뉴로 돌아갑니다.\n\n");
+			//파일 출력 함수
+			write_file();
+
 			player_prof();
 		}
 		else {
@@ -330,6 +404,9 @@ void player_prof() {
 	int cmd = 0;
 
 	system("cls");
+
+	//파일 읽기 함수
+	read_file();
 
 	printf("---------------------------------------------------------------\n원하는 작업을 선택하세요\n");
 	printf("1. 선수 등록\n");

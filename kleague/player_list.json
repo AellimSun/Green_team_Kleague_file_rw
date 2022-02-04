@@ -1,0 +1,112 @@
+{
+	"player" : [
+		{
+			"id": "0_1",
+			"name": "김김김",
+			"height": 160,
+			"weight": 45,
+			"back": 1,
+			"position": "GK",
+			"useYN": "Y"
+		},
+		{
+			"id": "0_2",
+			"name": "티티티",
+			"height": 161,
+			"weight": 45,
+			"back": 2,
+			"position": "DF",
+			"useYN": "Y"
+		},
+		{
+			"id": "0_3",
+			"name": "최최최",
+			"height": 170,
+			"weight": 45,
+			"back": 3,
+			"position": "MF",
+			"useYN": "Y"
+		},
+		{
+			"id": "0_4",
+			"name": "서서서",
+			"height": 163,
+			"weight": 45,
+			"back": 4,
+			"position": "FW",
+			"useYN": "Y"
+		},
+		{
+			"id": "1_5",
+			"name": "임임임",
+			"height": 164,
+			"weight": 45,
+			"back": 5,
+			"position": "GK",
+			"useYN": "Y"
+		},
+		{
+			"id": "1_6",
+			"name": "효효효",
+			"height": 165,
+			"weight": 45,
+			"back": 6,
+			"position": "DF",
+			"useYN": "Y"
+		},
+		{
+			"id": "1_7",
+			"name": "이이이",
+			"height": 166,
+			"weight": 45,
+			"back": 7,
+			"position": "MF",
+			"useYN": "Y"
+		},
+		{
+			"id": "1_8",
+			"name": "권권권",
+			"height": 167,
+			"weight": 45,
+			"back": 8,
+			"position": "FW",
+			"useYN": "Y"
+		},
+		{
+			"id": "2_9",
+			"name": "카카카",
+			"height": 168,
+			"weight": 45,
+			"back": 9,
+			"position": "GK",
+			"useYN": "Y"
+		},
+		{
+			"back": 10,
+			"height": 169,
+			"id": "2_10",
+			"name": "닝닝닝",
+			"position": "DF",
+			"useYN": "Y",
+			"weight": 45
+		},
+		{
+			"id": "2_11",
+			"name": "윈윈윈",
+			"height": 170,
+			"weight": 45,
+			"back": 11,
+			"position": "MF",
+			"useYN": "Y"
+		},
+		{
+			"id": "2_12",
+			"name": "지지지",
+			"height": 171,
+			"weight": 45,
+			"back": 12,
+			"position": "FW",
+			"useYN": "Y"
+		}
+	]
+}

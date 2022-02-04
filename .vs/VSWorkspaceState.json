@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\kleague"
   ],
-  "SelectedNode": "\\kleague.sln",
+  "SelectedNode": "\\kleague\\player_prof.c",
   "PreviewInSolutionExplorer": false
 }
