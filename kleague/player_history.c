@@ -405,8 +405,3 @@ void player_history_data_write_txt(void)
     }
     fclose(fp);
 }
-
-void player_history_data_read_json(void)
-{
-
-}
