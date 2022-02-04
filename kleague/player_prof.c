@@ -85,9 +85,9 @@ void player_prof_C() {
 	//선수 기록에도 입력된 선수 정보 추가
 	strcpy(player_history_list[seq].id, player_list[seq].player_id);
 	player_history_list[seq].score = 0;
-	player_history_list[seq].assitant = 0;
+	player_history_list[seq].assistant = 0;
 	player_history_list[seq].yellow_card = 0;
-	player_history_list[seq].off_the_feild = 0;
+	player_history_list[seq].off_the_field = 0;
 	player_history_list[seq].view_YN = 'Y';
 
 	printf("%s", player_list[12].player_name);

@@ -16,9 +16,9 @@ typedef struct
 {
 	char id[10];
 	int score;
-	int assitant;
+	int assistant;
 	int yellow_card;
-	int off_the_feild;
+	int off_the_field;
 	char view_YN;
 
 }player_his;
