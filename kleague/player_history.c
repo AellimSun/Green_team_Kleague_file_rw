@@ -94,6 +94,7 @@ void player_history_C(int repeat, char name_in[], int player_num)
 
     while (go == loop_start)
     {
+        system("cls");
         printf("---------------------------------------------------------------\n");
         printf("선수 이름을 입력하세요.");
         scanf("%s", name_in);
@@ -119,17 +120,21 @@ void player_history_C(int repeat, char name_in[], int player_num)
             scanf("%d", &off_the_feild);
             player_history_list[player_num].off_the_feild += off_the_feild;
             go = loop_end;
+            system("pause");
         }
         else if (player_num == CNT_PLYAER + 1)
         {
             printf("선수 이름이 잘못되었습니다. 이름을 다시 입력하세요.\n");
+            system("pause");
         }
         else if (player_num == CNT_PLYAER + 2)
         {
             printf("조회가 금지된 선수입니다.\n");
+            system("pause");
         }
         repeat++;
     }
+
 }
 
 void player_history_R(char name_in[], int player_num)
@@ -138,6 +143,7 @@ void player_history_R(char name_in[], int player_num)
 
     while (go == loop_start)
     {
+        system("cls");
         printf("---------------------------------------------------------------\n");
         printf("조회할 선수 이름을 입력하세요.");
         scanf("%s", name_in);
@@ -160,6 +166,7 @@ void player_history_R(char name_in[], int player_num)
         {
             printf("조회가 금지된 선수입니다.\n");
         }
+        system("pause");
     }
 }
 
@@ -169,6 +176,7 @@ void player_history_U(char name_in[], int player_num)
 
     while (go == loop_start)
     {
+        system("cls");
         printf("---------------------------------------------------------------\n");
         printf("수정할 선수 이름을 입력하세요.");
         scanf("%s", name_in);
@@ -218,7 +226,6 @@ void player_history_U(char name_in[], int player_num)
                     break;
                 }
             }
-
             go = loop_end;
         }
         else if (player_num == CNT_PLYAER + 1)
@@ -229,6 +236,7 @@ void player_history_U(char name_in[], int player_num)
         {
             printf("조회가 금지된 선수입니다.\n");
         }
+        system("pause");
     }
 }
 
@@ -238,6 +246,7 @@ void player_history_D(char name_in[], int player_num)
 
     while (go == loop_start)
     {
+        system("cls");
         printf("---------------------------------------------------------------\n");
         printf("기록 조회를 금지할 선수 이름을 입력하세요.");
         scanf("%s", name_in);
@@ -254,11 +263,14 @@ void player_history_D(char name_in[], int player_num)
         else if (player_num == CNT_PLYAER + 1)
         {
             printf("오류입니다. 선수이름을 다시 입력하세요.\n");
+            break;
         }
         else if (player_num == CNT_PLYAER + 2)
         {
             printf("조회가 금지된 선수입니다.\n");
+            break;
         }
+        system("pause");
     }
 }
 
