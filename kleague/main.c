@@ -57,7 +57,7 @@ void player_mng() {
 
 int main(void) {
 	int cmd = 0;
-
+	
 	system("cls");
 	printf("---------------------------------------------------------------\n원하는 작업을 선택하세요\n");
 	printf("1. 선수 관리\n");

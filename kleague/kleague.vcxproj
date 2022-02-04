@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="player_history.txt" />
+    <Text Include="team_prof.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
