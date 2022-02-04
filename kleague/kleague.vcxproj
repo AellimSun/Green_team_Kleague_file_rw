@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="parson.c" />
     <ClCompile Include="player_history.c" />
     <ClCompile Include="player_prof.c" />
     <ClCompile Include="player_ranking.c" />
@@ -27,8 +28,10 @@
     <ClCompile Include="team_history2.c" />
     <ClCompile Include="team_prof.c" />
     <ClCompile Include="team_ranking.c" />
+    <ClCompile Include="txt_read.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="parson.h" />
     <ClInclude Include="structure.h" />
     <ClInclude Include="헤더.h" />
   </ItemGroup>
