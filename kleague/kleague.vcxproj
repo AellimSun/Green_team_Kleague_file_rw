@@ -34,6 +34,9 @@
     <ClInclude Include="structure.h" />
     <ClInclude Include="헤더.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="player_history.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

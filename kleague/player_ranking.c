@@ -38,7 +38,7 @@ void sorting_player(int by) {
 		}
 		else if (by == 2) {
 			//도움값 가져오기
-			player_rank_list[i].value = player_history_list[i].assitant;
+			player_rank_list[i].value = player_history_list[i].assistant;
 		}
 			
 	}
