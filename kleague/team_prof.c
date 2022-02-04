@@ -166,7 +166,7 @@ void team_show()
 	
 
 
-	for (i = 0; i < new; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (team_list[i].use_YN == 'Y')
 		{
@@ -299,12 +299,13 @@ void team()
 	printf("3.팀 정보 조회\n");
 	printf("4.팀 정보 삭제\n");
 	printf("5.이전으로..\n");
+	printf("6.텍스트 불러오기 \n");
 	scanf("%d", &menu);
 	printf("\n\n\n");
 
 	switch (menu)
 	{
-		
+
 	case 1:		//팀 등록
 		team_prof_C();
 		break;
@@ -320,6 +321,33 @@ void team()
 
 	case 5:
 		main();
+	case 6:
+		team_txt();
+		break;
 	}
+}
 
+
+int team_txt(void)
+{
+	//int n;
+
+	FILE* fp;
+	fp = fopen("team_prof.txt", "r");
+	//fscanf(fp, "%d", &n);
+
+	//teamProfile* team_list = (teamProfile*)malloc(sizeof(teamProfile) * n);
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name, team_list[i].use_YN);
+	}
+	for (int j = 3; j < 10; j++)
+	{
+		fscanf(fp, "%d	%s	%s	%d	%s	%d	%s %c", &team_list[j].team_id, &team_list[j].area, &team_list[j].stadium, &team_list[j].since, &team_list[j].coach, &team_list[j].v, &team_list[j].team_name, &team_list[j].use_YN);
+		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[j].team_id, team_list[j].area, team_list[j].stadium, team_list[j].since, team_list[j].coach, team_list[j].v, team_list[j].team_name, team_list[j].use_YN);
+	}
+	fclose(fp);
+	
+	system("pause");
+	team();
 }

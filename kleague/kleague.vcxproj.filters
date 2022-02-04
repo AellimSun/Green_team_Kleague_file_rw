@@ -24,9 +24,6 @@
     <ClCompile Include="team_prof.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="player_prof.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="player_history.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -39,6 +36,12 @@
     <ClCompile Include="team_ranking.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="parson.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="player_prof.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="헤더.h">
@@ -47,9 +50,15 @@
     <ClInclude Include="structure.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="parson.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="player_history.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+    <Text Include="team_prof.txt">
       <Filter>소스 파일</Filter>
     </Text>
   </ItemGroup>
