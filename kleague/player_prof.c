@@ -272,6 +272,8 @@ void player_prof_U() {
 	}
 	
 	if (strlen(player_list[seq].player_name) != 0 && player_list[seq].useYN == 'Y') {
+		//파일 출력 함수
+		read_file();
 		proc_update(seq);
 	}
 	else {
