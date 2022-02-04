@@ -384,6 +384,7 @@ void player_history_data_write_txt(void)
 
     fp = fopen(FILE_NAME".txt", "w");
 
+
     if (fp == NULL)
     {
         printf("파일이 열리지 않았습니다.\n");

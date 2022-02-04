@@ -1,10 +1,11 @@
-﻿  player_history.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(97,15): warning C4013: 'player_mng'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(107,10): warning C4101: 'player_id' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(210,17): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(361,13): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(352,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(381,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-  kleague.vcxproj -> C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
+﻿  main.c
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(22,17): warning C4013: 'player_ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(25,15): warning C4013: 'team_ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(28,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(50,14): warning C4013: 'player_prof'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(53,17): warning C4013: 'player_history'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(99,7): warning C4013: 'team'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\main.c(102,9): warning C4013: 'result'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  kleague.vcxproj -> C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
