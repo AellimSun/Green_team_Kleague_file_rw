@@ -27,6 +27,7 @@
     <ClCompile Include="team_history2.c" />
     <ClCompile Include="team_prof.c" />
     <ClCompile Include="team_ranking.c" />
+    <ClCompile Include="txt_read.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="structure.h" />

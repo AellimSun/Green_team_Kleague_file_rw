@@ -39,6 +39,9 @@
     <ClCompile Include="team_ranking.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="txt_read.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="헤더.h">
