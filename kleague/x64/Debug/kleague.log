@@ -1,13 +1,1 @@
-﻿  player_history.c
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(97,15): warning C4013: 'player_mng'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(107,10): warning C4101: 'player_id' :참조되지 않은 지역 변수입니다.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(210,17): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(361,13): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(352,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\player_history.c(381,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-  txt_read.c
-  코드를 생성하고 있습니다...
-C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\kleague\txt_read.c(59): warning C4716: 'txt_read': 값을 반환해야 합니다.
-  kleague.vcxproj -> C:\CODING\Visual Studio\source\repos\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
+﻿  kleague.vcxproj -> C:\Users\PKNU\Desktop\초록색팀 - KLIS\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
