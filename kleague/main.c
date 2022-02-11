@@ -81,7 +81,7 @@ int main(void) {
 		team();
 	}
 	else if (cmd == 3) {
-		result();
+		result(team_hist_list);
 	}
 	else if (cmd == 4) {
 		ranking();
