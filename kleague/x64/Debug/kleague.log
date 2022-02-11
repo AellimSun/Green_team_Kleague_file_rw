@@ -1,63 +1,7 @@
-﻿  main.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(20,17): warning C4013: 'player_ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(23,15): warning C4013: 'team_ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(26,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(48,14): warning C4013: 'player_prof'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(51,17): warning C4013: 'player_history'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(66,10): warning C4013: 'txt_read'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(81,7): warning C4013: 'team'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\main.c(84,9): warning C4013: 'result'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  parson.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\parson.c(606,76): warning C4267: '=': 'size_t'에서 'unsigned long'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  player_history.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(26,40): warning C4047: '초기화 중': 'player_his *'의 간접 참조 수준이 'player_his (*)[20]'과(와) 다릅니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(112,15): warning C4013: 'player_mng'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(122,10): warning C4101: 'player_id' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(225,17): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(377,13): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(368,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(397,9): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(429,32): warning C4047: '=': 'player_his *'의 간접 참조 수준이 'player_his (*)[20]'과(와) 다릅니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(433,33): warning C4047: '!=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(435,30): warning C4133: '=': 'player_his *'과(와) 'player_his *' 사이의 형식이 호환되지 않습니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(437,26): warning C4133: '=': 'player_his *'과(와) 'player_his *' 사이의 형식이 호환되지 않습니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(446,32): warning C4047: '=': 'player_his *'의 간접 참조 수준이 'player_his (*)[20]'과(와) 다릅니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_history.c(456,26): warning C4133: '=': 'player_his *'과(와) 'player_his *' 사이의 형식이 호환되지 않습니다.
-  player_prof.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_prof.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_prof.c(74,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_prof.c(249,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_prof.c(380,1): warning C4047: '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-  player_ranking.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_ranking.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_ranking.c(109,10): warning C4013: 'ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  structure.c
-  team_history2.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_history2.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_history2.c(273,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_history2.c(302,2): warning C4033: 'result'은(는) 값을 반환해야 합니다.
-  team_prof.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_prof.c(17,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_prof.c(325,11): warning C4013: 'team_txt'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  team_ranking.c
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c(8,17): warning C4013: 'match_team_sort'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c(9,19): warning C4013: 'match_team_points'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c(62,9): warning C4013: 'ranking'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  txt_read.c
-  코드를 생성하고 있습니다...
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\txt_read.c(59): warning C4716: 'txt_read': 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c(70): warning C4716: 'match_team_sort': 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_ranking.c(102): warning C4716: 'match_team_points': 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_prof.c(353): warning C4716: 'team_txt': 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\team_history2.c(303): warning C4716: 'result': 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\kleague\player_ranking.c(126): warning C4717: 'player_ranking': 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로가 발생합니다.
-  kleague.vcxproj -> C:\Users\PKNU\source\repos\AellimSun\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
+﻿  team_history2.c
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(277,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(306,2): warning C4033: 'result'은(는) 값을 반환해야 합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(307): warning C4716: 'result': 값을 반환해야 합니다.
+  kleague.vcxproj -> C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
