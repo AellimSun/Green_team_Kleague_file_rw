@@ -21,6 +21,8 @@ typedef struct
 	int off_the_field;
 	char view_YN;
 
+	struct player_his *next;
+
 }player_his;
 
 typedef struct 
