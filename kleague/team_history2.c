@@ -202,22 +202,17 @@ int result(team_hist *TH_p) {
 	printf("\n\n");
 	printf("조회하고 싶은 연도를 입력하세요 : ");
 	scanf("%d", &hist_year_select);
-
 	int hist_month_select;
 	printf("\n");
 	printf("조회하고 싶은 달을 입력하세요 : ");
 	scanf("%d", &hist_month_select);
 	printf("\n");
-
 	int print_no = 0;
-
 	for (int run = 0; run < 100; run++) {
 		if ((TH_p+run)->team_hist_year == hist_year_select && (TH_p + run)->team_hist_month == hist_month_select) {
 			print_no += 1;
 		}
 	}
-
-
 	if (print_no > 0) {
 		printf("%d 년 %d 월의 경기 결과를 검색합니다.", hist_year_select, hist_month_select);
 		for (int i = 0; i < 99; i++) {
@@ -227,7 +222,6 @@ int result(team_hist *TH_p) {
 				printf("\n");
 				printf("%d년 %d월 %d일 경기", (TH_p + i)->team_hist_year, (TH_p + i)->team_hist_month, (TH_p + i)->team_hist_date);
 				printf("\n");
-
 				printf("\tHOME\t<%s>\t%d\n\tAWAY\t<%s>\t%d", (TH_p + i)->team_hist_home, (TH_p + i)->team_hist_homegoal, (TH_p + i)->team_hist_away, (TH_p + i)->team_hist_awaygoal);
 				printf("\n");
 				printf("====================================");
@@ -243,6 +237,13 @@ int result(team_hist *TH_p) {
 		printf("경기가 없는 날입니다.");
 		printf("\n");
 	}
+	//	for (int i = 0; i < 100; i++){
+	//		if ((TH_p + i + 1)->team_hist_year != NULL) {
+	//			(TH_p + i)->next = (TH_p + i + 1)->next;
+	//			
+	//		}
+	//}
+
 	system("pause");
 	result(team_hist_list);
 }

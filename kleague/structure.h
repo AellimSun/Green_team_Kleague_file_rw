@@ -45,6 +45,8 @@ typedef struct
 	int team_hist_homegoal;
 	int team_hist_awaygoal;
 	char team_hist_datadelete;
+
+	struct team_hist* next;
 } team_hist;
 
 typedef struct

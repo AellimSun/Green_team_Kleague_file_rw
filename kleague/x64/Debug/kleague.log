@@ -1,7 +1,7 @@
 ﻿  team_history2.c
 C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\헤더.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': 매크로 재정의
 C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c : message : '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
-C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(277,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(306,2): warning C4033: 'result'은(는) 값을 반환해야 합니다.
-C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(307): warning C4716: 'result': 값을 반환해야 합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(278,7): warning C4013: 'main'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(307,2): warning C4033: 'result'은(는) 값을 반환해야 합니다.
+C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\kleague\team_history2.c(308): warning C4716: 'result': 값을 반환해야 합니다.
   kleague.vcxproj -> C:\Users\PKNU\source\repos\Green_team_Kleague_file_rw\x64\Debug\kleague.exe
