@@ -36,6 +36,7 @@ typedef struct
 	int v;			//¿ì½ÂÈ½¼ö
 	char team_name[50];	//ÆÀ¸í
 	char use_YN;
+	struct teamProfile *next;
 }teamProfile;
 
 
@@ -69,3 +70,4 @@ extern player_his player_history_list[player_number];
 extern teamProfile team_list[10];
 extern team_hist team_hist_list[100];
 extern team_match team_match_list[10];
+ 
