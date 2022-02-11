@@ -33,6 +33,7 @@ typedef struct
 	int v;			//¿ì½ÂÈ½¼ö
 	char team_name[50];	//ÆÀ¸í
 	char use_YN;
+	struct teamProfile *next;
 }teamProfile;
 
 typedef struct

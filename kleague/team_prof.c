@@ -6,11 +6,10 @@
 
 int new=3;
 
-teamProfile* p_team = &team_list;
 
 void team();
 
-void team_prof_C()
+void team_prof_C(teamProfile* p_team)
 {
 	system("cls");
 
@@ -59,12 +58,12 @@ void team_prof_C()
 	{
 		
 		
-			if ((p_team+new)->since == 0)
+			if ((p_team + new)->since == NULL)
 			{
 
 				(p_team + new)->team_id = new_team_id;
-				strcpy(*(p_team + new)->area, new_area);
-				strcpy(*(p_team + new)->stadium, new_stadium);
+				strcpy((p_team + new)->area, new_area);
+				strcpy((p_team + new)->stadium, new_stadium);
 				(p_team + new)->since= new_since;
 				strcpy((p_team + new)->coach, new_coach);
 				(p_team + new)->v = new_v;
@@ -78,12 +77,12 @@ void team_prof_C()
 	}
 	else
 	{
-		team_prof_C();
+		team_prof_C(team_list);
 	}
 
 }
 
-void team_prof_update()
+void team_prof_update(teamProfile* p_team)
 {
 	int i;
 	
@@ -157,11 +156,11 @@ void team_prof_update()
 	}
 	else
 	{
-		team_prof_update();
+		team_prof_update(team_list);
 	}
 }
 
-void team_show()
+void team_show(teamProfile* p_team)
 {
 	system("cls");
 	int i;
@@ -184,7 +183,7 @@ void team_show()
 
 }
 
-void team_delete()
+void team_delete(teamProfile* p_team)
 {
 	int c;
 	int flag = 0;
@@ -301,7 +300,7 @@ void team()
 	printf("3.팀 정보 조회\n");
 	printf("4.팀 정보 삭제\n");
 	printf("5.이전으로..\n");
-	/*printf("6.텍스트 불러오기 \n");*/
+	printf("6.링크로 팀 조회 \n");
 	scanf("%d", &menu);
 	printf("\n\n\n");
 
@@ -309,24 +308,24 @@ void team()
 	{
 
 	case 1:		//팀 등록
-		team_prof_C();
+		team_prof_C(team_list);
 		break;
 	case 2:
-		team_prof_update();
+		team_prof_update(team_list);
 		break;
 	case 3:
-		team_show();
+		team_show(team_list);
 		break;
 	case 4:
-		team_delete();
+		team_delete(team_list);
 		break;
 
 	case 5:
 		main();
 		break;
-	/*case 6:
-		team_txt();
-		break;*/
+	case 6:
+		team_link();
+		break;
 	}
 }
 
@@ -354,3 +353,33 @@ void team()
 //	system("pause");
 //	team();
 //}
+
+int team_link(void)
+{
+	teamProfile* head = &team_list[0], * current;
+	for (int i = 0; i < new-1; i++)
+	{
+		team_list[i].next = &team_list[i + 1];
+	}
+	//team_list[0].next = &team_list[1];
+	//team_list[1].next = &team_list[2];
+
+	/*printf("head->team_id : %d,   head->area : %s\n", head->team_id,head->area);
+	printf("head->next->team_id : %d,    head->next->coach : %s\n", head->next->team_id,head->next->coach);*/
+
+	printf("list all\n\n\n");
+	current = head;
+	while (current != NULL)
+	{
+		printf("팀id : %d	연고지 : %s	홈구장 : %s\n"
+			"창단연도 : %d	감독이름 : %s	우승횟수 : %d	팀명 : %s\n"
+			"=========================================================\n\n", current->team_id, current->area, current->stadium, current->since, current->coach, current->v, current->team_name);
+		current = current->next;
+	}
+	printf("\n");
+
+	system("pause");
+	team();
+
+	return 0;
+}
