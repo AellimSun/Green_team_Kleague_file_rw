@@ -21,6 +21,8 @@ typedef struct
 	int off_the_field;
 	char view_YN;
 
+	struct player_his *next;
+
 }player_his;
 
 typedef struct 
@@ -46,6 +48,8 @@ typedef struct
 	int team_hist_homegoal;
 	int team_hist_awaygoal;
 	char team_hist_datadelete;
+
+	struct team_hist* next;
 } team_hist;
 
 typedef struct

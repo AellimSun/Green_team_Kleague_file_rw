@@ -1,7 +1,10 @@
 #include "헤더.h"
 
-int result(void) {
+int result(team_hist *TH_p) {
+	
 	//원하는 활동 선택
+
+
 	int select = 0;
 
 	system("cls");
@@ -66,16 +69,16 @@ int result(void) {
 			printf("새로운 경기를 입력합니다.");
 
 			for (int empty_space = 0; empty_space < 100; empty_space++) {
-				if (team_hist_list[empty_space].team_hist_month == 0) {
+				if ((TH_p + empty_space)->team_hist_month == 0) {
 
-					team_hist_list[empty_space].team_hist_year = match_year;
-					team_hist_list[empty_space].team_hist_month = match_month;
-					team_hist_list[empty_space].team_hist_date = match_date;
-					strcpy(team_hist_list[empty_space].team_hist_home, HOME_TEAM);
-					strcpy(team_hist_list[empty_space].team_hist_away, AWAY_TEAM);
-					team_hist_list[empty_space].team_hist_homegoal = HOME_TEAM_GOALS;
-					team_hist_list[empty_space].team_hist_awaygoal = AWAY_TEAM_GOALS;
-					team_hist_list[empty_space].team_hist_datadelete = 'y';
+					(TH_p + empty_space) ->team_hist_year = match_year;
+					(TH_p + empty_space) ->team_hist_month = match_month;
+					(TH_p + empty_space) ->team_hist_date = match_date;
+					strcpy((TH_p + empty_space) ->team_hist_home, HOME_TEAM);
+					strcpy((TH_p + empty_space) ->team_hist_away, AWAY_TEAM);
+					(TH_p + empty_space) ->team_hist_homegoal = HOME_TEAM_GOALS;
+					(TH_p + empty_space) ->team_hist_awaygoal = AWAY_TEAM_GOALS;
+					(TH_p + empty_space) ->team_hist_datadelete = 'y';
 					break;
 				}
 				else {
@@ -83,11 +86,11 @@ int result(void) {
 				}
 			}
 			system("pause");
-			result();
+			result(team_hist_list);
 		}
 		else {
 			system("pause");
-			result();
+			result(team_hist_list);
 
 		}
 	}
@@ -96,7 +99,7 @@ int result(void) {
 	else if (select == 2) {
 		printf("기존의 경기 결과를 수정합니다.\n\n");
 		for (int print_score = 0; print_score < 100; print_score++) {
-			if (team_hist_list[print_score].team_hist_date > 0) {
+			if ((TH_p+print_score)->team_hist_date > 0) {
 				printf("%d. %d년 %d월 %d일\n\t=> HOME TEAM : %s \t %d점  \t //\tAWAY TEAM : %s \t %d점 \n", print_score + 1, team_hist_list[print_score].team_hist_year, team_hist_list[print_score].team_hist_month, team_hist_list[print_score].team_hist_date, team_hist_list[print_score].team_hist_home, team_hist_list[print_score].team_hist_homegoal, team_hist_list[print_score].team_hist_away, team_hist_list[print_score].team_hist_awaygoal);
 			}
 			}
@@ -136,60 +139,61 @@ int result(void) {
 		scanf("%d", &update_awaygoal);
 		printf("\n\n");
 
-		team_hist_list[update_score -1].team_hist_year = update_year;
-		team_hist_list[update_score -1].team_hist_month = update_month;
-		team_hist_list[update_score -1].team_hist_date = update_date;
+		(TH_p + update_score -1)->team_hist_year = update_year;
+		(TH_p + update_score - 1)->team_hist_month = update_month;
+		(TH_p + update_score - 1)->team_hist_date = update_date;
 
-		strcpy(team_hist_list[update_score -1].team_hist_home, update_home);
-		strcpy(team_hist_list[update_score -1].team_hist_away, update_away);
+		strcpy((TH_p + update_score - 1)->team_hist_home, update_home);
+		strcpy((TH_p + update_score - 1)->team_hist_away, update_away);
 
-		team_hist_list[update_score -1].team_hist_homegoal = update_homegoal;
-		team_hist_list[update_score -1].team_hist_awaygoal = update_awaygoal;
+		(TH_p + update_score - 1)->team_hist_homegoal = update_homegoal;
+		(TH_p + update_score -1)->team_hist_awaygoal = update_awaygoal;
 
 		printf("수정이 완료되었습니다. \n");
 		system("pause");
-		result();
+		result(team_hist_list);
 	}
 
 
 	//경기 결과 조회
 	else if (select == 3) {
+	team_hist temp;
 		for (int top_bobsult = 0; top_bobsult < 99; top_bobsult++) {
-			for (int bobsult = 99; bobsult < (0 + top_bobsult) + 1; bobsult--) {
-				int bobsult_year, bobsult_month, bobsult_date, bobsult_homegoals, bobsult_awaygoals;
-				char bobsult_home[100], bobsult_away[100];
-				if (team_hist_list[bobsult].team_hist_date > team_hist_list[bobsult - 1].team_hist_date) {
-					bobsult_year = team_hist_list[bobsult].team_hist_year;
-					team_hist_list[bobsult].team_hist_year = team_hist_list[bobsult - 1].team_hist_year;
-					team_hist_list[bobsult - 1].team_hist_year = bobsult_year;
+			for (int bobsult = 0; bobsult < 99 - top_bobsult; bobsult++) {
 
-					bobsult_month = team_hist_list[bobsult].team_hist_month;
-					team_hist_list[bobsult].team_hist_month = team_hist_list[bobsult - 1].team_hist_month;
-					team_hist_list[bobsult - 1].team_hist_month = bobsult_month;
+				//int bobsult_year, bobsult_month, bobsult_date, bobsult_homegoals, bobsult_awaygoals;
+				//char bobsult_home[100], bobsult_away[100]
+				if ((TH_p+bobsult)->team_hist_date > (TH_p+bobsult+1)->team_hist_date) {
+					temp = TH_p[bobsult];
+					TH_p[bobsult] = TH_p[bobsult + 1];
+					TH_p[bobsult + 1] = temp;
 
-					bobsult_date = team_hist_list[bobsult].team_hist_date;
-					team_hist_list[bobsult].team_hist_date = team_hist_list[bobsult - 1].team_hist_date;
-					team_hist_list[bobsult - 1].team_hist_date = bobsult_date;
-
-					strcpy(bobsult_home, team_hist_list[bobsult].team_hist_home);
-					strcpy(team_hist_list[bobsult].team_hist_home, team_hist_list[bobsult - 1].team_hist_home);
-					strcpy(team_hist_list[bobsult - 1].team_hist_home, bobsult_home);
-
-					strcpy(bobsult_away, team_hist_list[bobsult].team_hist_away);
-					strcpy(team_hist_list[bobsult].team_hist_away, team_hist_list[bobsult - 1].team_hist_away);
-					strcpy(team_hist_list[bobsult - 1].team_hist_away, bobsult_away);
-
-					bobsult_homegoals = team_hist_list[bobsult].team_hist_homegoal;
-					team_hist_list[bobsult].team_hist_homegoal = team_hist_list[bobsult - 1].team_hist_homegoal;
-					team_hist_list[bobsult - 1].team_hist_homegoal = bobsult_homegoals;
-
-					bobsult_awaygoals = team_hist_list[bobsult].team_hist_awaygoal;
-					team_hist_list[bobsult].team_hist_awaygoal = team_hist_list[bobsult - 1].team_hist_awaygoal;
-					team_hist_list[bobsult - 1].team_hist_awaygoal = bobsult_awaygoals;
+				//if (team_hist_list[bobsult].team_hist_date > team_hist_list[bobsult - 1].team_hist_date) {
+				//	bobsult_year = team_hist_list[bobsult].team_hist_year;
+				//	team_hist_list[bobsult].team_hist_year = team_hist_list[bobsult - 1].team_hist_year;
+				//	team_hist_list[bobsult - 1].team_hist_year = bobsult_year;
+				//	bobsult_month = team_hist_list[bobsult].team_hist_month;
+				//	team_hist_list[bobsult].team_hist_month = team_hist_list[bobsult - 1].team_hist_month;
+				//	team_hist_list[bobsult - 1].team_hist_month = bobsult_month;
+				//	bobsult_date = team_hist_list[bobsult].team_hist_date;
+				//	team_hist_list[bobsult].team_hist_date = team_hist_list[bobsult - 1].team_hist_date;
+				//	team_hist_list[bobsult - 1].team_hist_date = bobsult_date;
+				//	strcpy(bobsult_home, team_hist_list[bobsult].team_hist_home);
+				//	strcpy(team_hist_list[bobsult].team_hist_home, team_hist_list[bobsult - 1].team_hist_home);
+				//	strcpy(team_hist_list[bobsult - 1].team_hist_home, bobsult_home);
+				//	strcpy(bobsult_away, team_hist_list[bobsult].team_hist_away);
+				//	strcpy(team_hist_list[bobsult].team_hist_away, team_hist_list[bobsult - 1].team_hist_away);
+				//	strcpy(team_hist_list[bobsult - 1].team_hist_away, bobsult_away);
+				//	bobsult_homegoals = team_hist_list[bobsult].team_hist_homegoal;
+				//	team_hist_list[bobsult].team_hist_homegoal = team_hist_list[bobsult - 1].team_hist_homegoal;
+				//	team_hist_list[bobsult - 1].team_hist_homegoal = bobsult_homegoals;
+				//	bobsult_awaygoals = team_hist_list[bobsult].team_hist_awaygoal;
+				//	team_hist_list[bobsult].team_hist_awaygoal = team_hist_list[bobsult - 1].team_hist_awaygoal;
+				//	team_hist_list[bobsult - 1].team_hist_awaygoal = bobsult_awaygoals;
 				}
 				else {
 				}
-
+			
 				
 		}
 		
@@ -198,33 +202,27 @@ int result(void) {
 	printf("\n\n");
 	printf("조회하고 싶은 연도를 입력하세요 : ");
 	scanf("%d", &hist_year_select);
-
 	int hist_month_select;
 	printf("\n");
 	printf("조회하고 싶은 달을 입력하세요 : ");
 	scanf("%d", &hist_month_select);
 	printf("\n");
-
 	int print_no = 0;
-
 	for (int run = 0; run < 100; run++) {
-		if (team_hist_list[run].team_hist_year == hist_year_select && team_hist_list[run].team_hist_month == hist_month_select) {
+		if ((TH_p+run)->team_hist_year == hist_year_select && (TH_p + run)->team_hist_month == hist_month_select) {
 			print_no += 1;
 		}
 	}
-
-
 	if (print_no > 0) {
 		printf("%d 년 %d 월의 경기 결과를 검색합니다.", hist_year_select, hist_month_select);
 		for (int i = 0; i < 99; i++) {
-			if (team_hist_list[i].team_hist_year == hist_year_select && team_hist_list[i].team_hist_month == hist_month_select && team_hist_list[i].team_hist_datadelete == 'y') {
+			if ((TH_p + i)->team_hist_year == hist_year_select && (TH_p + i)->team_hist_month == hist_month_select && (TH_p + i)->team_hist_datadelete == 'y') {
 				printf("\n");
 				printf("====================================");
 				printf("\n");
-				printf("%d년 %d월 %d일 경기", team_hist_list[i].team_hist_year, team_hist_list[i].team_hist_month, team_hist_list[i].team_hist_date);
+				printf("%d년 %d월 %d일 경기", (TH_p + i)->team_hist_year, (TH_p + i)->team_hist_month, (TH_p + i)->team_hist_date);
 				printf("\n");
-
-				printf("\tHOME\t<%s>\t%d\n\tAWAY\t<%s>\t%d", team_hist_list[i].team_hist_home, team_hist_list[i].team_hist_homegoal, team_hist_list[i].team_hist_away, team_hist_list[i].team_hist_awaygoal);
+				printf("\tHOME\t<%s>\t%d\n\tAWAY\t<%s>\t%d", (TH_p + i)->team_hist_home, (TH_p + i)->team_hist_homegoal, (TH_p + i)->team_hist_away, (TH_p + i)->team_hist_awaygoal);
 				printf("\n");
 				printf("====================================");
 				printf("\n");
@@ -239,8 +237,15 @@ int result(void) {
 		printf("경기가 없는 날입니다.");
 		printf("\n");
 	}
+	//	for (int i = 0; i < 100; i++){
+	//		if ((TH_p + i + 1)->team_hist_year != NULL) {
+	//			(TH_p + i)->next = (TH_p + i + 1)->next;
+	//			
+	//		}
+	//}
+
 	system("pause");
-	result();
+	result(team_hist_list);
 }
 
 	//경기 결과 삭제
@@ -248,8 +253,8 @@ int result(void) {
 	printf("경기 결과를 삭제합니다.\n");
 
 		for (int print_del = 0; print_del < 100; print_del++) {
-			if (team_hist_list[print_del].team_hist_date > 0 && team_hist_list[print_del].team_hist_datadelete == 'y') {
-				printf("%d. %d년 %d월 %d일\n\t=> HOME TEAM : %s \t %d점  \t //\tAWAY TEAM : %s \t %d점 \n", print_del + 1, team_hist_list[print_del].team_hist_year, team_hist_list[print_del].team_hist_month, team_hist_list[print_del].team_hist_date, team_hist_list[print_del].team_hist_home, team_hist_list[print_del].team_hist_homegoal, team_hist_list[print_del].team_hist_away, team_hist_list[print_del].team_hist_awaygoal);
+			if ((TH_p + print_del)->team_hist_date > 0 && (TH_p + print_del)->team_hist_datadelete == 'y') {
+				printf("%d. %d년 %d월 %d일\n\t=> HOME TEAM : %s \t %d점  \t //\tAWAY TEAM : %s \t %d점 \n", print_del + 1, (TH_p + print_del)->team_hist_year, (TH_p + print_del)->team_hist_month, (TH_p + print_del)->team_hist_date, (TH_p + print_del)->team_hist_home, (TH_p + print_del)->team_hist_homegoal, (TH_p + print_del)->team_hist_away, (TH_p + print_del)->team_hist_awaygoal);
 			}
 		}
 		printf("\n");
@@ -257,14 +262,14 @@ int result(void) {
 		printf("삭제를 원하는 경기 번호를 입력하세요 : ");
 		scanf("%d", &delete);
 
-		team_hist_list[delete - 1].team_hist_datadelete = 'n';
+		(TH_p + delete)->team_hist_datadelete = 'n';
 	
 		printf("\n");
 		printf("삭제를 완료했습니다.");
 		printf("\n\n");
 
 		system("pause");
-		result();
+		result(team_hist_list);
 
 	}
 
@@ -276,7 +281,7 @@ int result(void) {
 	else 
 	{
 		printf("입력오류입니다.\n");
-		result();
+		result(team_hist_list);
 	}
 
 	//이어하기 질문
