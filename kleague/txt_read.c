@@ -4,6 +4,7 @@
 team_hist team_hist_list[100];
 teamProfile team_list[10];
 
+
 int txt_read() {
 	FILE* THT;
 	int i = 0;

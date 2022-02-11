@@ -6,6 +6,8 @@
 
 int new=3;
 
+teamProfile* p_team = &team_list;
+
 void team();
 
 void team_prof_C()
@@ -57,17 +59,17 @@ void team_prof_C()
 	{
 		
 		
-			if (team_list[new].since == 0)
+			if ((p_team+new)->since == 0)
 			{
 
-				team_list[new].team_id = new_team_id;
-				strcpy(team_list[new].area, new_area);
-				strcpy(team_list[new].stadium, new_stadium);
-				team_list[new].since= new_since;
-				strcpy(team_list[new].coach, new_coach);
-				team_list[new].v = new_v;
-				strcpy(team_list[new].team_name, new_team_name);
-				team_list[new].use_YN = 'Y';
+				(p_team + new)->team_id = new_team_id;
+				strcpy(*(p_team + new)->area, new_area);
+				strcpy(*(p_team + new)->stadium, new_stadium);
+				(p_team + new)->since= new_since;
+				strcpy((p_team + new)->coach, new_coach);
+				(p_team + new)->v = new_v;
+				strcpy((p_team + new)->team_name, new_team_name);
+				(p_team + new)->use_YN = 'Y';
 				
 				new++;
 			}
@@ -89,9 +91,9 @@ void team_prof_update()
 
 	for (i = 0; i < new; i++)
 	{
-		if (team_list[i].use_YN == 'Y')
+		if ((p_team + i)->use_YN == 'Y')
 		{
-			printf("팀id : %d번 구단명 : %s\n\n", team_list[i].team_id, team_list[i].team_name);
+			printf("팀id : %d번 구단명 : %s\n\n", (p_team + i)->team_id, (p_team + i)->team_name);
 		}
 	}
 	int update_id;
@@ -137,16 +139,16 @@ void team_prof_update()
 	{
 		int update = update_id;
 
-		if (team_list[update].team_id == update_id)
+		if ((p_team + update)->team_id == update_id)
 		{
 
-			team_list[update].team_id = update_id;
-			strcpy(team_list[update].area, update_area);
-			strcpy(team_list[update].stadium, update_stadium);
-			team_list[update].since = update_since;
-			strcpy(team_list[update].coach, update_coach);
-			team_list[update].v = update_v;
-			strcpy(team_list[update].team_name, update_team_name);
+			(p_team + update)->team_id = update_id;
+			strcpy((p_team + update)->area, update_area);
+			strcpy((p_team + update)->stadium, update_stadium);
+			(p_team + update)->since = update_since;
+			strcpy((p_team + update)->coach, update_coach);
+			(p_team + update)->v = update_v;
+			strcpy((p_team + update)->team_name, update_team_name);
 
 		}
 
@@ -168,11 +170,11 @@ void team_show()
 
 	for (i = 0; i < 10; i++)
 	{
-		if (team_list[i].use_YN == 'Y')
+		if ((p_team + i)->use_YN == 'Y')
 		{
 			printf("팀id : %d번  연고지 : %s   홈구장 : %s  창단연도 : %d년\n"
 				"감독 : %s    K리그 우승 : %d번	구단명 : %s\n\n",
-				team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name);
+				(p_team + i)->team_id, (p_team + i)->area, (p_team + i)->stadium, (p_team + i)->since, (p_team + i)->coach, (p_team + i)->v, (p_team + i)->team_name);
 		}
 	}
 	
@@ -200,9 +202,9 @@ void team_delete()
 		int i;
 		for (i = 0; i < new; i++)
 		{
-			if (team_list[i].use_YN == 'Y')
+			if ((p_team + i)->use_YN == 'Y')
 			{
-				printf("팀id : %d번 구단명 : %s\n\n", team_list[i].team_id, team_list[i].team_name);
+				printf("팀id : %d번 구단명 : %s\n\n", (p_team + i)->team_id, (p_team + i)->team_name);
 
 			}
 		}
@@ -212,7 +214,7 @@ void team_delete()
 		scanf("%d", &delete_id);
 		printf("\n\n");
 
-		for (int j = 0; j < 20; j++)
+		for (int j = 0; j < 20; j++)			//수정해야됨********************
 		{
 			if (strlen(player_list[j].player_id) == 0) {
 				break;
@@ -223,21 +225,21 @@ void team_delete()
 			{
 				flag = 1;
 				break;
-			}
+			}						//여기까지 수정해야됨***************************
 
 		}
 		if (flag == 0)
 		{
 			int delete = delete_id;
 			char YorN;
-			printf("%s팀을 삭제하시겠습니까?	(Y/N)", team_list[delete].team_name);
+			printf("%s팀을 삭제하시겠습니까?	(Y/N)", (p_team + delete)->team_name);
 			scanf("%s", &YorN);
 			printf("\n\n");
 
 			if (YorN == 'Y')
 			{
-				team_list[delete].use_YN = 'N';
-				printf("%s팀이 삭제되었습니다.\n\n", team_list[delete].team_name);
+				(p_team + delete)->use_YN = 'N';
+				printf("%s팀이 삭제되었습니다.\n\n", (p_team + delete)->team_name);
 			}
 			system("pause");
 			team();
@@ -258,11 +260,11 @@ void team_delete()
 		int recovery_id;
 		for (i = 0; i < new; i++)
 		{
-			if (team_list[i].use_YN == 'N')
+			if ((p_team + i)->use_YN == 'N')
 			{
 				printf("팀id : %d번  연고지 : %s   홈구장 : %s  창단연도 : %d년\n"
 					"감독 : %s    K리그 우승 : %d번	구단명 : %s\n\n",
-					team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name);
+					(p_team + i)->team_id, (p_team + i)->area, (p_team + i)->stadium, (p_team + i)->since, (p_team + i)->coach, (p_team + i)->v, (p_team + i)->team_name);
 			}
 		}
 		printf("복구할 팀의 id를 입력하세요.");
@@ -270,14 +272,14 @@ void team_delete()
 
 		int recovery = recovery_id;
 		char NorY;
-		printf("%s팀을 복구하겠습니까?	(Y/N)", team_list[recovery].team_name);
+		printf("%s팀을 복구하겠습니까?	(Y/N)", (p_team + recovery)->team_name);
 		scanf("%s", &NorY);
 		printf("\n\n");
 
 		if (NorY == 'Y')
 		{
-			team_list[recovery].use_YN = 'Y';
-			printf("%s팀이 복구되었습니다.\n\n", team_list[recovery].team_name);
+			(p_team + recovery)->use_YN = 'Y';
+			printf("%s팀이 복구되었습니다.\n\n", (p_team + recovery)->team_name);
 		}
 		system("pause");
 		team();

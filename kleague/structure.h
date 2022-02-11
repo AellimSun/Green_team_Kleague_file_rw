@@ -62,3 +62,4 @@ extern player_his player_history_list[player_number];
 extern teamProfile team_list[10];
 extern team_hist team_hist_list[100];
 extern team_match team_match_list[10];
+ 
