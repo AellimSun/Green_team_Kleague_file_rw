@@ -1,7 +1,7 @@
 #pragma once
 #define player_number 20
 
-typedef struct
+typedef struct struct_player
 {
 	char player_id[10];
 	char player_name[10];
@@ -10,6 +10,7 @@ typedef struct
 	int player_back_num;
 	char player_position[3];
 	char useYN;
+	struct struct_player* next;
 } player;
 
 typedef struct
