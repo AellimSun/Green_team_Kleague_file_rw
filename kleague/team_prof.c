@@ -6,9 +6,10 @@
 
 int new=3;
 
+
 void team();
 
-void team_prof_C()
+void team_prof_C(teamProfile* p_team)
 {
 	system("cls");
 
@@ -57,17 +58,17 @@ void team_prof_C()
 	{
 		
 		
-			if (team_list[new].since == 0)
+			if ((p_team + new)->since == NULL)
 			{
 
-				team_list[new].team_id = new_team_id;
-				strcpy(team_list[new].area, new_area);
-				strcpy(team_list[new].stadium, new_stadium);
-				team_list[new].since= new_since;
-				strcpy(team_list[new].coach, new_coach);
-				team_list[new].v = new_v;
-				strcpy(team_list[new].team_name, new_team_name);
-				team_list[new].use_YN = 'Y';
+				(p_team + new)->team_id = new_team_id;
+				strcpy((p_team + new)->area, new_area);
+				strcpy((p_team + new)->stadium, new_stadium);
+				(p_team + new)->since= new_since;
+				strcpy((p_team + new)->coach, new_coach);
+				(p_team + new)->v = new_v;
+				strcpy((p_team + new)->team_name, new_team_name);
+				(p_team + new)->use_YN = 'Y';
 				
 				new++;
 			}
@@ -76,12 +77,12 @@ void team_prof_C()
 	}
 	else
 	{
-		team_prof_C();
+		team_prof_C(team_list);
 	}
 
 }
 
-void team_prof_update()
+void team_prof_update(teamProfile* p_team)
 {
 	int i;
 	
@@ -89,9 +90,9 @@ void team_prof_update()
 
 	for (i = 0; i < new; i++)
 	{
-		if (team_list[i].use_YN == 'Y')
+		if ((p_team + i)->use_YN == 'Y')
 		{
-			printf("팀id : %d번 구단명 : %s\n\n", team_list[i].team_id, team_list[i].team_name);
+			printf("팀id : %d번 구단명 : %s\n\n", (p_team + i)->team_id, (p_team + i)->team_name);
 		}
 	}
 	int update_id;
@@ -137,16 +138,16 @@ void team_prof_update()
 	{
 		int update = update_id;
 
-		if (team_list[update].team_id == update_id)
+		if ((p_team + update)->team_id == update_id)
 		{
 
-			team_list[update].team_id = update_id;
-			strcpy(team_list[update].area, update_area);
-			strcpy(team_list[update].stadium, update_stadium);
-			team_list[update].since = update_since;
-			strcpy(team_list[update].coach, update_coach);
-			team_list[update].v = update_v;
-			strcpy(team_list[update].team_name, update_team_name);
+			(p_team + update)->team_id = update_id;
+			strcpy((p_team + update)->area, update_area);
+			strcpy((p_team + update)->stadium, update_stadium);
+			(p_team + update)->since = update_since;
+			strcpy((p_team + update)->coach, update_coach);
+			(p_team + update)->v = update_v;
+			strcpy((p_team + update)->team_name, update_team_name);
 
 		}
 
@@ -155,11 +156,11 @@ void team_prof_update()
 	}
 	else
 	{
-		team_prof_update();
+		team_prof_update(team_list);
 	}
 }
 
-void team_show()
+void team_show(teamProfile* p_team)
 {
 	system("cls");
 	int i;
@@ -168,11 +169,11 @@ void team_show()
 
 	for (i = 0; i < 10; i++)
 	{
-		if (team_list[i].use_YN == 'Y')
+		if ((p_team + i)->use_YN == 'Y')
 		{
 			printf("팀id : %d번  연고지 : %s   홈구장 : %s  창단연도 : %d년\n"
 				"감독 : %s    K리그 우승 : %d번	구단명 : %s\n\n",
-				team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name);
+				(p_team + i)->team_id, (p_team + i)->area, (p_team + i)->stadium, (p_team + i)->since, (p_team + i)->coach, (p_team + i)->v, (p_team + i)->team_name);
 		}
 	}
 	
@@ -182,7 +183,7 @@ void team_show()
 
 }
 
-void team_delete()
+void team_delete(teamProfile* p_team)
 {
 	int c;
 	int flag = 0;
@@ -200,9 +201,9 @@ void team_delete()
 		int i;
 		for (i = 0; i < new; i++)
 		{
-			if (team_list[i].use_YN == 'Y')
+			if ((p_team + i)->use_YN == 'Y')
 			{
-				printf("팀id : %d번 구단명 : %s\n\n", team_list[i].team_id, team_list[i].team_name);
+				printf("팀id : %d번 구단명 : %s\n\n", (p_team + i)->team_id, (p_team + i)->team_name);
 
 			}
 		}
@@ -212,7 +213,7 @@ void team_delete()
 		scanf("%d", &delete_id);
 		printf("\n\n");
 
-		for (int j = 0; j < 20; j++)
+		for (int j = 0; j < 20; j++)			//수정해야됨********************
 		{
 			if (strlen(player_list[j].player_id) == 0) {
 				break;
@@ -223,21 +224,21 @@ void team_delete()
 			{
 				flag = 1;
 				break;
-			}
+			}						//여기까지 수정해야됨***************************
 
 		}
 		if (flag == 0)
 		{
 			int delete = delete_id;
 			char YorN;
-			printf("%s팀을 삭제하시겠습니까?	(Y/N)", team_list[delete].team_name);
+			printf("%s팀을 삭제하시겠습니까?	(Y/N)", (p_team + delete)->team_name);
 			scanf("%s", &YorN);
 			printf("\n\n");
 
 			if (YorN == 'Y')
 			{
-				team_list[delete].use_YN = 'N';
-				printf("%s팀이 삭제되었습니다.\n\n", team_list[delete].team_name);
+				(p_team + delete)->use_YN = 'N';
+				printf("%s팀이 삭제되었습니다.\n\n", (p_team + delete)->team_name);
 			}
 			system("pause");
 			team();
@@ -258,11 +259,11 @@ void team_delete()
 		int recovery_id;
 		for (i = 0; i < new; i++)
 		{
-			if (team_list[i].use_YN == 'N')
+			if ((p_team + i)->use_YN == 'N')
 			{
 				printf("팀id : %d번  연고지 : %s   홈구장 : %s  창단연도 : %d년\n"
 					"감독 : %s    K리그 우승 : %d번	구단명 : %s\n\n",
-					team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name);
+					(p_team + i)->team_id, (p_team + i)->area, (p_team + i)->stadium, (p_team + i)->since, (p_team + i)->coach, (p_team + i)->v, (p_team + i)->team_name);
 			}
 		}
 		printf("복구할 팀의 id를 입력하세요.");
@@ -270,14 +271,14 @@ void team_delete()
 
 		int recovery = recovery_id;
 		char NorY;
-		printf("%s팀을 복구하겠습니까?	(Y/N)", team_list[recovery].team_name);
+		printf("%s팀을 복구하겠습니까?	(Y/N)", (p_team + recovery)->team_name);
 		scanf("%s", &NorY);
 		printf("\n\n");
 
 		if (NorY == 'Y')
 		{
-			team_list[recovery].use_YN = 'Y';
-			printf("%s팀이 복구되었습니다.\n\n", team_list[recovery].team_name);
+			(p_team + recovery)->use_YN = 'Y';
+			printf("%s팀이 복구되었습니다.\n\n", (p_team + recovery)->team_name);
 		}
 		system("pause");
 		team();
@@ -299,7 +300,7 @@ void team()
 	printf("3.팀 정보 조회\n");
 	printf("4.팀 정보 삭제\n");
 	printf("5.이전으로..\n");
-	printf("6.텍스트 불러오기 \n");
+	printf("6.링크로 팀 조회 \n");
 	scanf("%d", &menu);
 	printf("\n\n\n");
 
@@ -307,47 +308,78 @@ void team()
 	{
 
 	case 1:		//팀 등록
-		team_prof_C();
+		team_prof_C(team_list);
 		break;
 	case 2:
-		team_prof_update();
+		team_prof_update(team_list);
 		break;
 	case 3:
-		team_show();
+		team_show(team_list);
 		break;
 	case 4:
-		team_delete();
+		team_delete(team_list);
 		break;
 
 	case 5:
 		main();
+		break;
 	case 6:
-		team_txt();
+		team_link();
 		break;
 	}
 }
 
 
-int team_txt(void)
+//int team_txt(void)
+//{
+//	//int n;
+//
+//	FILE* fp;
+//	fp = fopen("team_prof.txt", "r");
+//	//fscanf(fp, "%d", &n);
+//
+//	//teamProfile* team_list = (teamProfile*)malloc(sizeof(teamProfile) * n);
+//	for (int i = 0; i < 3; i++)
+//	{
+//		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name, team_list[i].use_YN);
+//	}
+//	for (int j = 3; j < 10; j++)
+//	{
+//		fscanf(fp, "%d	%s	%s	%d	%s	%d	%s %c", &team_list[j].team_id, &team_list[j].area, &team_list[j].stadium, &team_list[j].since, &team_list[j].coach, &team_list[j].v, &team_list[j].team_name, &team_list[j].use_YN);
+//		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[j].team_id, team_list[j].area, team_list[j].stadium, team_list[j].since, team_list[j].coach, team_list[j].v, team_list[j].team_name, team_list[j].use_YN);
+//	}
+//	fclose(fp);
+//	
+//	system("pause");
+//	team();
+//}
+
+int team_link(void)
 {
-	//int n;
-
-	FILE* fp;
-	fp = fopen("team_prof.txt", "r");
-	//fscanf(fp, "%d", &n);
-
-	//teamProfile* team_list = (teamProfile*)malloc(sizeof(teamProfile) * n);
-	for (int i = 0; i < 3; i++)
+	teamProfile* head = &team_list[0], * current;
+	for (int i = 0; i < new-1; i++)
 	{
-		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[i].team_id, team_list[i].area, team_list[i].stadium, team_list[i].since, team_list[i].coach, team_list[i].v, team_list[i].team_name, team_list[i].use_YN);
+		team_list[i].next = &team_list[i + 1];
 	}
-	for (int j = 3; j < 10; j++)
+	//team_list[0].next = &team_list[1];
+	//team_list[1].next = &team_list[2];
+
+	/*printf("head->team_id : %d,   head->area : %s\n", head->team_id,head->area);
+	printf("head->next->team_id : %d,    head->next->coach : %s\n", head->next->team_id,head->next->coach);*/
+
+	printf("list all\n\n\n");
+	current = head;
+	while (current != NULL)
 	{
-		fscanf(fp, "%d	%s	%s	%d	%s	%d	%s %c", &team_list[j].team_id, &team_list[j].area, &team_list[j].stadium, &team_list[j].since, &team_list[j].coach, &team_list[j].v, &team_list[j].team_name, &team_list[j].use_YN);
-		printf("%d	%s	%s\n	%d	%s	%d	%s %c\n", team_list[j].team_id, team_list[j].area, team_list[j].stadium, team_list[j].since, team_list[j].coach, team_list[j].v, team_list[j].team_name, team_list[j].use_YN);
+		printf("팀id : %d	연고지 : %s	홈구장 : %s\n"
+			"창단연도 : %d	감독이름 : %s	우승횟수 : %d	팀명 : %s\n"
+			"=========================================================\n\n", current->team_id, current->area, current->stadium, current->since, current->coach, current->v, current->team_name);
+		current = current->next;
 	}
-	fclose(fp);
-	
+	printf("\n");
+
 	system("pause");
 	team();
+
+	return 0;
 }

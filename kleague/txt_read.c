@@ -2,6 +2,8 @@
 #include"structure.h"
 
 team_hist team_hist_list[100];
+teamProfile team_list[10];
+
 
 int txt_read() {
 	FILE* THT;
@@ -52,6 +54,24 @@ int txt_read() {
 		fscanf(THT, "%s %d %d %d %d %c", &player_history_list[i].id, &player_history_list[i].score,
 			&player_history_list[i].assistant, &player_history_list[i].yellow_card, &player_history_list[i].off_the_field,
 			&player_history_list[i].view_YN);
+		i++;
+	}
+	fclose(THT);
+	i = 0;
+
+
+	/******************** team_prof 관련 파일 ********************/
+	THT = fopen("team_prof.txt", "r");
+
+	if (THT == NULL) {
+		printf("team_prof 파일이 열리지 않았습니다.\n");
+	}
+
+	while (!feof(THT))
+	{
+		fscanf(THT, "%d	%s	%s	%d	%s	%d	%s %c", 
+			&team_list[i].team_id, &team_list[i].area, &team_list[i].stadium, &team_list[i].since, &team_list[i].coach, &team_list[i].v, &team_list[i].team_name, &team_list[i].use_YN);
+
 		i++;
 	}
 	fclose(THT);

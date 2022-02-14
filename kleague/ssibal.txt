@@ -1,7 +1,0 @@
-3 seoul seoulstadium 1987 choi 6 FCseoul Y
-4 jeonbuk jeonju 1993 park 9 jeonbukHyundai Y
-5 수원 수원월드컵 1978 박지성 5 수원삼성 Y
-6 덕포 덕포초 1950 임경길 99 덕포초등학교 Y
-7 호계 호계고 2002 손흥민 50 호계고등학교 Y
-8 이화 이화중 2001 김계란 1 이화중학교 Y
-9 약수 약수초 1970 곽튜브 11 약수초등학교 Y
